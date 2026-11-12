@@ -38,7 +38,8 @@
   });
 
   function setStatus(form, msg, isError) {
-    var status = form.querySelector(".form-status");
+    var status = form.querySelector(".form-status") ||
+      (form.parentElement && form.parentElement.querySelector(".form-status"));
     if (!status) return;
     status.hidden = false;
     status.textContent = msg;
