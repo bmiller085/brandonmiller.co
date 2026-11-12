@@ -21,14 +21,16 @@ The domain and Google Workspace stay registered with Squarespace; only DNS point
 
 The header and footer are repeated in every page, so a change to either needs to be made in each file.
 
-## Placeholders to fill before launch
+## Still to fill in
 
 | Placeholder | Where | Replace with |
 |---|---|---|
-| `FORMSPREE_ID` | `contact.html` | The Formspree form ID (e.g. `xyzabcd`) |
 | Pre-order button (`data-preorder`) | `book.html` | The retailer link; remove `aria-disabled="true"` and update the button text |
 
-Until the IDs are filled in, the forms show a friendly "coming soon" message instead of failing.
+
+## Contact form
+
+- Formspree form `moedvnze` (free plan, 50 submissions/month), delivering to hello@brandonmiller.co.
 
 ## Kit setup notes
 
