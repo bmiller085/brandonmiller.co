@@ -25,7 +25,6 @@ The header and footer are repeated in every page, so a change to either needs to
 
 | Placeholder | Where | Replace with |
 |---|---|---|
-| `KIT_FORM_ID` | `index.html`, `book.html` | The numeric ID of the Kit form (Kit → Grow → Landing Pages & Forms → your form) |
 | `FORMSPREE_ID` | `contact.html` | The Formspree form ID (e.g. `xyzabcd`) |
 | Pre-order button (`data-preorder`) | `book.html` | The retailer link; remove `aria-disabled="true"` and update the button text |
 
@@ -33,8 +32,9 @@ Until the IDs are filled in, the forms show a friendly "coming soon" message ins
 
 ## Kit setup notes
 
+- Form: "Website – Self-Audit Checklist", ID `10182836`, used by the signup forms in `index.html` and `book.html`.
 - Form setting "After subscribing": redirect to `https://www.brandonmiller.co/checklist-thanks`.
-- Incentive / welcome email: link to `https://www.brandonmiller.co/s/HR-Compliance-Self-Audit-Checklist.pdf`.
+- Confirmation email (double opt-in): "After confirming" redirects to `https://www.brandonmiller.co/s/HR-Compliance-Self-Audit-Checklist.pdf`.
 - Add Kit's sending-domain DNS records in Squarespace's DNS settings so emails come from `brandonmiller.co`.
 
 ## DNS (in Squarespace → Domains → brandonmiller.co → DNS)
