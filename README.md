@@ -25,7 +25,7 @@ The header and footer are repeated in every page, so a change to either needs to
 
 | Placeholder | Where | Replace with |
 |---|---|---|
-| Pre-order button (`data-preorder`) | `book.html` | The retailer link; remove `aria-disabled="true"` and update the button text |
+| Pre-order button (`data-preorder`) | `book.html` | The retailer link; remove `aria-disabled="true"` and update the button text. The mobile pre-order bar on the book page picks up this link automatically and only appears once it is live. |
 
 
 ## Contact form

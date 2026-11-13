@@ -37,6 +37,27 @@
     a.addEventListener("click", function (e) { e.preventDefault(); });
   });
 
+  // Book page, phones: a pre-order bar slides up once the pre-order link is live
+  // and the main buy box has scrolled away. It stays out of the way of the
+  // signup section and the footer. The link comes from the main button, so the
+  // pre-order URL only lives in one place.
+  var bar = document.querySelector("[data-buy-bar]");
+  var buy = document.querySelector("a[data-preorder]");
+  if (bar && buy && buy.getAttribute("aria-disabled") !== "true" && "IntersectionObserver" in window) {
+    var barLink = bar.querySelector("[data-buy-bar-link]");
+    barLink.href = buy.href;
+    if (buy.target) { barLink.target = buy.target; barLink.rel = buy.rel; }
+    bar.hidden = false;
+    var watched = [buy.closest(".formats") || buy, document.getElementById("notify"), document.querySelector(".site-footer")]
+      .filter(Boolean);
+    var visible = new Set();
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) visible.add(en.target); else visible.delete(en.target); });
+      bar.classList.toggle("show", visible.size === 0);
+    });
+    watched.forEach(function (el) { io.observe(el); });
+  }
+
   function setStatus(form, msg, isError) {
     var status = form.querySelector(".form-status") ||
       (form.parentElement && form.parentElement.querySelector(".form-status"));
