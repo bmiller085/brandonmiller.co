@@ -21,12 +21,10 @@ The domain and Google Workspace stay registered with Squarespace; only DNS point
 
 The header and footer are repeated in every page, so a change to either needs to be made in each file.
 
-## Still to fill in
+## Pre-order
 
-| Placeholder | Where | Replace with |
-|---|---|---|
-| Pre-order button (`data-preorder`) | `book.html` | The retailer link; remove `aria-disabled="true"` and update the button text. The mobile pre-order bar on the book page picks up this link automatically and only appears once it is live. |
-
+- Kindle ebook: https://www.amazon.com/dp/B0HRQZYQR8 ($12.99, pre-order; release January 12, 2027). The link and price live in the `AMAZON` / `PREORDER` / `EBOOK_NOTE` values of the build script and appear on the home, book, and thank-you pages. The mobile pre-order bar on the book page reads its link from the `data-preorder` button.
+- Paperback: January 12, 2027 (no pre-order).
 
 ## Contact form
 
