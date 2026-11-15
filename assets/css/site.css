@@ -10,6 +10,13 @@
   font-display: swap;
 }
 @font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat.woff2") format("woff2");
+  font-weight: 500 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
   font-family: "Outfit";
   src: url("../fonts/outfit.woff2") format("woff2");
   font-weight: 100 900;
@@ -29,11 +36,14 @@
   --gold-deep: #7d6232;   /* gold text on white (5.7:1) */
   --gold-soft: #d6c4a0;   /* gold text on black */
   --gold-button: #c8a86c; /* button fill; ink text on it is 8.7:1 */
+  --navy: #192f5c;        /* the book cover's navy: dark sections */
+  --navy-deep: #0f1d3b;   /* footer */
   --on-dark: #e9e6df;
   --on-dark-muted: #a9a59c;
 
   --display: "Newsreader", Georgia, "Times New Roman", serif;
   --sans: "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --label: "Montserrat", "Outfit", system-ui, sans-serif; /* cover-style capitals */
 
   --wrap: 1180px;
   --gutter: clamp(16px, 4vw, 48px);
@@ -474,3 +484,43 @@ section { padding: clamp(72px, 10vw, 140px) 0; }
 .notfound { text-align: center; padding: clamp(88px, 14vw, 170px) 0; }
 .notfound .big { font-family: var(--display); font-weight: 300; font-size: clamp(6rem, 18vw, 11rem); line-height: 1; color: var(--gold-deep); margin: 0; }
 .notfound .btn-row { justify-content: center; margin-top: 2.4rem; }
+
+
+/* =====================================================================
+   Cover echo: ties the site to the book cover without copying it.
+   1. Cover-style geometric capitals for labels, buttons, and navigation
+   2. The cover's navy for dark sections
+   3. The cover's circle-and-capsule shapes as small accents
+   ===================================================================== */
+
+/* 1. Labels */
+.eyebrow, .btn, .brand-tag, .site-nav a, .hero-art .caption, .release-strip small,
+.creds li, .card .more, .tag, .author-note cite, .contact-list b, .field label,
+.legal h3, .footer-grid h3 {
+  font-family: var(--label); font-weight: 600;
+}
+.eyebrow { font-size: .72rem; letter-spacing: .22em; }
+.btn { font-size: .74rem; letter-spacing: .16em; }
+.site-nav a { font-size: .76rem; letter-spacing: .14em; font-weight: 500; }
+.brand-tag { letter-spacing: .22em; }
+
+/* 2. Navy surfaces */
+.bg-ink { background: var(--navy); }
+.site-footer { background: var(--navy-deep); }
+.hero-art { background: radial-gradient(120% 80% at 50% 30%, #27447f 0%, var(--navy) 55%, var(--navy-deep) 100%); }
+.book-hero .cover-frame { background: var(--navy); }
+.thanks-card .badge::before { background: var(--navy); }
+.checklist-preview li.done::before { background-color: var(--navy); }
+.skip-link { background: var(--navy); }
+.btn-primary:hover, .btn-outline:hover, .site-nav .nav-cta a:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+.bg-ink .btn-gold:hover { background: var(--gold-soft); }
+
+/* 3. Circle-and-capsule accents (drawn with a mask so they take any color) */
+.eyebrow::before, .prose .pull::before, .prose .pull::after {
+  width: 34px; height: 8px; background: var(--gold);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 8'%3E%3Crect width='22' height='8' rx='4'/%3E%3Ccircle cx='30' cy='4' r='4'/%3E%3C/svg%3E") center/100% 100% no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 8'%3E%3Crect width='22' height='8' rx='4'/%3E%3Ccircle cx='30' cy='4' r='4'/%3E%3C/svg%3E") center/100% 100% no-repeat;
+}
+.bg-ink .eyebrow::before { background: var(--gold-soft); }
+.signup-card::before, .form-card::before { width: 56px; height: 6px; top: -3px; border-radius: 3px; }
+.checklist-preview li::before { border-radius: 50%; border-color: var(--navy); }
