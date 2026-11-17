@@ -330,6 +330,7 @@ section { padding: clamp(72px, 10vw, 140px) 0; }
 
 /* ---------- Cards ---------- */
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line); background: var(--white); }
+@media (min-width: 901px) { .cards.two { grid-template-columns: repeat(2, 1fr); } }
 .card { padding: clamp(28px, 3.4vw, 44px); display: flex; flex-direction: column; border-left: 1px solid var(--line); }
 .card:first-child { border-left: 0; }
 .card p { color: var(--muted); }
