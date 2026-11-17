@@ -222,6 +222,7 @@ section { padding: clamp(72px, 10vw, 140px) 0; }
 .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(40px, 7vw, 104px); align-items: center; }
 .hero h1 em { display: block; }
 .hero .lede { max-width: 32em; margin-bottom: 2.4rem; }
+.hero .btn-row .btn { width: 27em; max-width: 100%; } /* the two pre-order buttons stack at one width */
 .hero-art {
   position: relative; width: 100%; max-width: 480px; aspect-ratio: 4 / 5; justify-self: end;
   background: radial-gradient(120% 80% at 50% 30%, #26272b 0%, var(--ink) 55%, var(--ink-deep) 100%);
@@ -360,7 +361,7 @@ section { padding: clamp(72px, 10vw, 140px) 0; }
 .book-hero .cover-frame::before { content: ""; position: absolute; inset: 14px; border: 1px solid rgba(216, 198, 164, .4); pointer-events: none; }
 .book-hero .cover { width: 100%; box-shadow: 0 30px 50px -20px rgba(0, 0, 0, .7); position: relative; }
 .book-hero h1 { font-size: clamp(2.8rem, 6vw, 4.4rem); margin-bottom: .15em; }
-.formats { list-style: none; margin: 2rem 0 0; padding: 0; max-width: 580px; border-top: 1px solid var(--line); }
+.formats { scroll-margin-top: 110px; list-style: none; margin: 2rem 0 0; padding: 0; max-width: 580px; border-top: 1px solid var(--line); }
 .formats li { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; padding: 18px 0; border-bottom: 1px solid var(--line); }
 .formats li > div { flex: 1 1 15em; min-width: 0; }
 .formats b { display: block; font-family: var(--display); font-size: 1.3rem; font-weight: 500; line-height: 1.2; color: var(--ink); }
